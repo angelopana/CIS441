@@ -1,0 +1,12 @@
+dt {
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em
+}
+
+dd.italic{
+
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 1.1em
+}
