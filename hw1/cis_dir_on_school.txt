@@ -1,0 +1,6 @@
+$cd /var/www/html/pana001
+---this is the path to the dir for our school server to publish html
+
+
+server to see if my website:
+http://cis444.cs.csusm.edu/pana001/<hw name file>
