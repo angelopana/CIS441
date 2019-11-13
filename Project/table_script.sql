@@ -1,0 +1,52 @@
+CREATE TABLE team_a.USERS (
+user_ID     INT(8) NOT NULL AUTO_INCREMENT,
+user_NAME   VARCHAR(30) NOT NULL,
+user_PASS   VARCHAR(255) NOT NULL,
+user_EMAIL  VARCHAR(255) NOT NULL,
+user_DATE   DATETIME NOT NULL,
+UNIQUE INDEX user_name_unique (user_NAME),
+PRIMARY KEY (user_ID)
+) ENGINE = INNODB;
+
+CREATE TABLE team_a.CATEGORIES (
+    categories_ID INT(8) NOT NULL AUTO_INCREMENT,
+    categories_NAME        VARCHAR(255) NOT NULL,
+    categories_DESC    VARCHAR(255) NOT NULL,
+UNIQUE INDEX cat_name_unique (categories_NAME),
+PRIMARY KEY (categories_ID)
+) ENGINE = INNODB;
+
+CREATE TABLE team_a.TOPICS (
+topic_ID        INT(8) NOT NULL AUTO_INCREMENT,
+topic_SUBJECT       VARCHAR(255) NOT NULL,
+topic_DATE      DATETIME NOT NULL,
+topic_CATEGORIES       INT(8) NOT NULL,
+topic_BY        INT(8) NOT NULL,
+PRIMARY KEY (topic_id),
+FOREIGN KEY (topic_CATEGORIES) 
+    REFERENCES team_a.CATEGORIES(categories_ID) 
+    ON DELETE CASCADE,    
+FOREIGN KEY (topic_BY)
+    REFERENCES team_a.USERS(user_ID)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE = INNODB;
+
+CREATE TABLE team_a.REPLIES(
+reply_ID         INT(8) NOT NULL AUTO_INCREMENT,
+reply_CONTENT        TEXT NOT NULL,
+reply_DATE       DATETIME NOT NULL,
+reply_TOPIC      INT(8) NOT NULL,
+reply_BY     INT(8) NOT NULL,
+PRIMARY KEY (reply_id),
+
+-- Links replies to the topics 
+FOREIGN KEY (reply_TOPIC)
+    REFERENCES team_a.TOPICS(topic_ID)
+    ON DELETE CASCADE,
+-- Linking user replies
+FOREIGN KEY (reply_by) 
+        REFERENCES team_a.USERS(user_ID)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE = INNODB;
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+    Angelo Pana
+    Homework 5
+    CIS444
+
+    Purpose: 
+    The document must contain the statement “Save time with TIME-SAVER 2.2,” 
+    which continuously moves back and forth across the top of the display. 
+    The statement change color between red and blue every fifth step of its movement 
+    (assuming that each move is one pixel long).
+    Users must be able to input the starting and ending positions of the moving statement.
+-->
+<html lang="en">
+<!-- HEAD -->
+<head>
+    <title> Homework 5 </title>
+    <meta charset="utf-8">
+    <!-- link to css -->
+    <link href="hw5.css" rel="stylesheet" type="text/ccss">
+    <!-- link to the Javascript -->
+    <script src="hw5.js" type="text/javascript"></script>
+</head>
+
+<!-- BODY -->
+<body onload="move()">
+  <header id="title">HOMEWORK 5</header>
+    <p id="sentence">Save time with TIME-SAVER 2.2</p>
+    <!-- User input for how far it will start and end -->
+    <form onsubmit="setInput(); return false">     
+            <!-- user input of start -->
+            <label for="startPoint">Start:</label>
+            <input type="number" id="startPoint" value="0" min="0">
+            <!-- user input of end set value to some number to be parsed and set movement end before user can input -->
+            <label for="endPoint">End:</label>
+            <input type="number" id="endPoint" value="850" min="0">
+
+            <input type="submit" value="submit" onchange="setUserInput()"/>
+    </form>
+   
+</body>
+
+</html>

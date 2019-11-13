@@ -1,0 +1,22 @@
+#sentence {
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    left: 0px;
+    position: absolute;
+    top: 150px;
+}
+
+#title {
+    color:purple;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+input[type=number], select {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 5px 0;
+    width: 5%;  
+}

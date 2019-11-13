@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+    Programmer: Angelo Pana
+    CIS444
+    Purpose: User prompts nth to invoke a script to create a table 
+-->
+<html lang="en">
+    <!--HEAD part-->
+    <head>
+        <title> Homework 3</title>
+        <meta charset="utf-8">
+        <link href="hw3.css" rel="stylesheet" type="text/css">
+        <script src="hw3.js" type="text/javascript"></script>
+    </head>
+
+   
+    <body>
+        <h1 id="hw3"> Homework 3</h1><br>
+
+            <!--Prompts user to enter an n, number-->
+
+            Input a number:<br>
+            <input type="number" id="n" aria-label="userInput">
+            <!--Press enter button when done-->
+            <button onclick="demo()">enter</button>
+  
+            <table aria-label="factorialTable">
+                <caption>Factorials</caption>
+                <tr>
+                    <th scope="col">Numbers</th>
+                    <th scope="col">Factorial</th>
+                 </tr>
+            </table>
+
+           <script>
+            function demo(){
+                //grabs the user number input
+                var number = document.getElementById("n").value;
+                for(var i =1; i <= number; i++){
+                    //sets numbers and factorials into a table
+                    addRow(i, factorial(i));
+                }
+            }
+        </script>
+    </body>
+</html>
